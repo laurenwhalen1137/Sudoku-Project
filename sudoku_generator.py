@@ -138,12 +138,12 @@ class SudokuGenerator:
     '''
 
     def fill_box(self, row_start, col_start):
-        nums = [num for num in range(1, self.row_length + 1)]
+        numbers = [num for num in range(1, self.row_length + 1)]
         random.shuffle(nums)
         index = 0
         for row in range(row_start, row_start + self.box_length):
             for col in range(col_start, col_start + self.box_length):
-                self.board[row][col] = nums[index]
+                self.board[row][col] = numbers[index]
                 index += 1
 
 
@@ -173,7 +173,7 @@ class SudokuGenerator:
     '''
 
     def fill_remaining(self, row, col):
-        if col >= self.row_length and row < self.row_length - 1:
+        if (col >= self.row_length and row < self.row_length - 1):
             row += 1
             col = 0
         if row >= self.row_length and col >= self.row_length:
